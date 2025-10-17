@@ -1,0 +1,13 @@
+{
+    "name": "ai-meeting-root",
+    "version": "1.0.0",
+    "description": "Startet Frontend und Backend Server",
+    "scripts": {
+        "start:frontend": "cd frontend && npm run dev",
+        "start:backend": "cd backend && venv/bin/python3 -m uvicorn app.main:app --reload --port 8000",
+        "dev": "concurrently \"npm:start:frontend\" \"npm:start:backend\""
+    },
+    "dependencies": {
+        "concurrently": "^8.2.2"
+    }
+}

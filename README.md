@@ -44,8 +44,6 @@ Meetings can be created with **password protection**, and user authentication is
 
 ---
 
-## Screenshots
-
 
 ## Author
 Yunus Mirac Comart

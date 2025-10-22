@@ -1,4 +1,5 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
+import "./styles/Navbar.css"
 
 function HomePageNavbar() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ function HomePageNavbar() {
   }
 
   return (
-    <nav>
+    <nav className="navbar">
       {/* Die Hauptlogik: 
         Zeige die "eingeloggte" Navi an, WENN der User eingeloggt ist UND wir NICHT auf einer der öffentlichen Seiten sind.
         In ALLEN ANDEREN Fällen, zeige die "ausgeloggte" Navi.
@@ -26,16 +27,20 @@ function HomePageNavbar() {
         // ----- EINGELOGGTE ANSICHT (z.B. auf /startpage) -----
         <>
           {/* Homelink zeigt zur Startseite */}
-          <Link to="/startpage">Home</Link>
-          <button onClick={handleLogout}>Logout</button>
+          <Link id="homeLink" to="/startpage">Home</Link>
+          <button id="logoutButton" onClick={handleLogout}>Logout</button>
         </>
       ) : (
         // ----- ÖFFENTLICHE / AUSGELOGGTE ANSICHT -----
         <>
           {/* Homelink zeigt zur öffentlichen Homepage */}
-          <Link to="/">Home</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/register">Register</Link>
+          <ul className="navbar-list">
+            <li><Link id="homeLink" to="/">AI-Meeting</Link></li>
+          </ul>
+          <ul className="navbar-list-right">
+            <li><Link id="loginLink" className="hover-grow" to="/login">Login</Link></li>
+            <li><Link id="registerLink" className="hover-grow" to="/register">Register</Link></li>
+          </ul>
         </>
       )}
     </nav>

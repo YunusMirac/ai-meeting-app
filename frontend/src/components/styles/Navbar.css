@@ -1,0 +1,92 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+}
+
+.navbar-list,
+.navbar-list-right {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+    padding-left: 0px;
+    padding-right: 30px;
+    margin-top: 30px;
+    font-size: 50px;
+}
+
+#homeLink {
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive;
+    color: #5237ff;
+    text-decoration: none;
+}
+
+.hover-grow {
+    /* Deine Basis-Stile */
+    /* Für das Pseudo-Element */
+    font-size: 35px;
+    color: #4f9f57;
+    text-decoration: none;
+    font-weight: bold;
+    /* --- DER TRICK --- */
+    /* 1. MUSS sein: Macht den Link zum Anker für den 
+       schwebenden Hintergrund */
+    position: relative;
+    /* 2. Nur die Textfarbe sanft überblenden */
+    transition: color 0.2s ease-in-out;
+    /* Optional: Sicherstellen, dass der Text immer oben liegt */
+    z-index: 1;
+}
+
+
+/* Hier erstellen wir den schwebenden Hintergrund-Block,
+  der hinter dem Text liegt.
+*/
+
+.hover-grow::before {
+    content: '';
+    /* Muss für Pseudo-Elemente sein */
+    position: absolute;
+    /* Das WICHTIGSTE: Holt es aus dem Layout! */
+    z-index: -1;
+    /* Legt es HINTER den Text */
+    /* Definiert die Hover-Stile (Hintergrund, Border, Radius).
+      Diese sind schon da, aber noch versteckt.
+    */
+    background-color: #739f4f;
+    border: 2px solid #739f4f;
+    border-radius: 5px;
+    /* 'inset' ist eine Kurzform für top, bottom, left, right.
+      -7px bedeutet: Der Block ist 7px GRÖSSER als der Text
+      (5px für dein Padding + 2px für dein Border).
+    */
+    inset: -7px;
+    /* Normalzustand: Versteckt und leicht geschrumpft
+      für einen "Wachs"-Effekt.
+    */
+    opacity: 0;
+    transform: scale(0.8);
+    /* Animation für das Erscheinen */
+    transition: transform 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+
+/* Wenn wir über den Link hovern... */
+
+.hover-grow:hover {
+    color: white;
+    /* ... ändert sich die Textfarbe */
+    cursor: pointer;
+}
+
+
+/* ... und der versteckte Hintergrund wird sichtbar und groß */
+
+.hover-grow:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}

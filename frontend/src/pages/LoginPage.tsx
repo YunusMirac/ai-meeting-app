@@ -2,10 +2,12 @@
 import { useState } from "react";
 import { authServices } from "../services/authServices";
 import { useNavigate } from "react-router-dom";
+import "../styles/LoginPage.css";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [errors, setErrors] = useState<{[key: string]: string}>({});
   const navigate = useNavigate();
   const AuthService = new authServices();
@@ -52,33 +54,35 @@ function LoginPage() {
 
   return (
     <>
-      <div>Login Page</div>
+    <div className="login-register-page">
+      <div className="login-register-title">Login Page</div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="email">Email:</label>
+          <label className="input-label" htmlFor="email">Email:</label>
           <input 
+            className="first-input"
             type="email" 
             id="email"
             placeholder="ihre.email@beispiel.com" 
             value={email} 
             onChange={(e) => setEmail(e.target.value)}
           />
-          {errors.email && <div style={{color: 'red', fontSize: '12px'}}>{errors.email}</div>}
         </div>
         
         <div>
-          <label htmlFor="password">Passwort:</label>
+          <label className="input-label" htmlFor="password">Passwort:</label>
           <input 
+            className="first-input"
             type="password" 
             id="password"
             placeholder="Ihr Passwort" 
             value={password} 
             onChange={(e) => setPassword(e.target.value)}
           />
-          {errors.password && <div style={{color: 'red', fontSize: '12px'}}>{errors.password}</div>}
         </div>
-        <button type="submit">Login</button>
+        <button className="submit-button" type="submit">Login</button>
       </form>
+      </div>
     </>
   );
 }

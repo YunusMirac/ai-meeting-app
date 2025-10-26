@@ -27,7 +27,7 @@ function HomePageNavbar() {
         // ----- EINGELOGGTE ANSICHT (z.B. auf /startpage) -----
         <>
           {/* Homelink zeigt zur Startseite */}
-          <Link id="homeLink" to="/startpage">Home</Link>
+          <Link id="startPageLink" to="/startpage">Home</Link>
           <button id="logoutButton" onClick={handleLogout}>Logout</button>
         </>
       ) : (

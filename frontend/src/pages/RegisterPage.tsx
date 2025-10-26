@@ -6,6 +6,7 @@ const [password, setPassword] = useState("");
 const [confirmPassword, setConfirmPassword] = useState("");
 const [firstName, setFirstName] = useState("");
 const [lastName, setLastName] = useState("");
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const [errors, setErrors] = useState<{[key: string]: string}>({});
 const AuthService = new authServices();
 
@@ -108,73 +109,72 @@ const handleSubmit = async (e: React.FormEvent) => {
 
   return (
     <>
-      <div>Register Page</div>
+       <div className="login-register-page">
+      <div className="login-register-title">Register Page</div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor="firstName">First Name:</label>
+          <label className="input-label" htmlFor="firstName">First Name:</label>
           <input 
+            className="first-input"
             type="text" 
             id="firstName"
             placeholder="First Name" 
             value={firstName} 
             onChange={(e) => setFirstName(e.target.value)} 
           />
-          {errors.firstName && <div style={{color: 'red', fontSize: '12px'}}>{errors.firstName}</div>}
         </div>
         
         <div>
-          <label htmlFor="lastName">Last Name:</label>
+          <label className="input-label" htmlFor="lastName">Last Name:</label>
           <input 
+            className="first-input"
             type="text" 
             id="lastName"
             placeholder="Last Name" 
             value={lastName} 
             onChange={(e) => setLastName(e.target.value)} 
           />
-          {errors.lastName && <div style={{color: 'red', fontSize: '12px'}}>{errors.lastName}</div>}
         </div>
         
         <div>
-          <label htmlFor="email">Email:</label>
+          <label className="input-label" htmlFor="email">Email:</label>
           <input 
+            className="first-input"
             type="email" 
             id="email"
             placeholder="Email" 
             value={email} 
             onChange={(e) => setEmail(e.target.value)} 
           />
-          {errors.email && <div style={{color: 'red', fontSize: '12px'}}>{errors.email}</div>}
         </div>
         
         <div>
-          <label htmlFor="password">Password:</label>
+          <label className="input-label" htmlFor="password">Password:</label>
           <input 
+            className="first-input"
             type="password" 
             id="password"
             placeholder="Password" 
             value={password} 
             onChange={(e) => setPassword(e.target.value)} 
           />
-          {errors.password && <div style={{color: 'red', fontSize: '12px'}}>{errors.password}</div>}
-          <div style={{fontSize: '11px', color: '#666', marginTop: '4px'}}>
-            Mindestens 8 Zeichen, 1 Groß-, 1 Kleinbuchstabe, 1 Zahl, 1 Sonderzeichen
-          </div>
         </div>
         
         <div>
-          <label htmlFor="confirmPassword">Passwort bestätigen:</label>
+          <label className="input-label" htmlFor="confirmPassword">Passwort bestätigen:</label>
           <input 
+            className="first-input"
             type="password" 
             id="confirmPassword"
             placeholder="Passwort wiederholen" 
             value={confirmPassword} 
             onChange={(e) => setConfirmPassword(e.target.value)}
           />
-          {errors.confirmPassword && <div style={{color: 'red', fontSize: '12px'}}>{errors.confirmPassword}</div>}
         </div>
         
-        <button type="submit">Register</button>
+        <button className="submit-button" type="submit">Register</button>
       </form>
+      </div>
     </>
   );
 }

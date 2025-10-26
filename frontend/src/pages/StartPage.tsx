@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { userServices } from "../services/userServices";
 import { Link, useNavigate } from "react-router-dom";
-
+import "../styles/StartPage.css";
 type User = {
     id: number;
     email: string;
@@ -93,44 +93,43 @@ wsRef.current.onmessage = (event) => {
 
     return (
         <>
-            <div>
-                <button onClick={() => navigate("/create-meeting")}>Create Meeting</button>
-                <button onClick={() => navigate("/join-meeting")}>Join Meeting</button>
+            <div className="meeting-actions">
+                <button className="meeting-button" onClick={() => navigate("/create-meeting")}>Create Meeting</button>
+                <button className="meeting-button" onClick={() => navigate("/join-meeting")}>Join Meeting</button>
             </div>
             <div>
-                <h2>Benutzersuche:</h2>
-                <form onSubmit={handleSearch}>
-                    <input type="text" placeholder="Suche nach Email" value={searchEmail} onChange={(e) => setSearchEmail(e.target.value)} />
-                    <button type="submit">Search</button>
+                <form className="search-form" onSubmit={handleSearch}>
+                    <input className="search-input" type="text" placeholder="Search by Email here...." value={searchEmail} onChange={(e) => setSearchEmail(e.target.value)} />
+                    <button className="search-button" type="submit">Search</button>
                 </form>
         {foundUser ?(
-        <table><thead>
+        <table className="table"><thead className="table-thead">
                             <tr>
                                 <th>Email</th>
-                                <th>Vorname</th>
-                                <th>Nachname</th>
-                                <th>Aktion</th>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Action</th>
                             </tr>
-            </thead><tbody>
+            </thead><tbody className="table-tbody">
                             <tr key={foundUser.id}>
                                 <td>{foundUser.email}</td>
                                 <td>{foundUser.first_name}</td>
                                 <td>{foundUser.last_name}</td>
                                 <td>
-                    <button type="button" onClick={() => handleAddUser(foundUser.id)}>hinzufügen</button>
+                    <button className="table-button" type="button" onClick={() => handleAddUser(foundUser.id)}>hinzufügen</button>
                                 </td>
                             </tr>
             </tbody></table>
         ) : (
-            <p>Keine Email gefunden</p>
+            <p className="description">Kein Benutzer gefunden.</p>
                 )}
             </div>
 
-    <div><h1>Meine Kontakte:</h1>
+    <div className="contacts-div"><h1 className="contacts-title">Contacts:</h1>
                 {contacts.length > 0 ? (
-            <ul>
+            <ul className="contacts-list">
                 {contacts.map((contact, index) => (
-                    <li key={contact.id || `contact-${index}`}>
+                    <li className="contacts-list-item" key={contact.id || `contact-${index}`}>
                         <Link to={`/chat/${contact.id}`}>
                             {contact.email} 
                             {contact.unread_count > 0 && <span>({contact.unread_count})</span>}

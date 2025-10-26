@@ -42,8 +42,8 @@
         margin-bottom: 20px;
     }
     
-    h1 {
-        font-size: 120px;
+    .title {
+        font-size: 220px;
         background: linear-gradient(45deg, #dab71a, #4c00ff);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -51,13 +51,13 @@
         letter-spacing: 8px;
     }
     
-    h2 {
-        font-size: 30px;
+    .subtitle {
+        font-size: 50px;
         color: #4f5a9f;
-        margin-top: -80px;
+        margin-top: -190px;
     }
     
-    p {
+    .description {
         font-size: 30px;
         text-align: center;
         margin: 100px 300px;

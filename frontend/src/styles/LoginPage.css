@@ -1,0 +1,48 @@
+.login-register-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-top: 200px;
+}
+
+.login-register-title {
+    font-size: 90px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    color: green
+}
+
+.input-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 40px;
+}
+
+.first-input {
+    width: 500px;
+    padding: 20px;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+.submit-button {
+    width: 544px;
+    padding: 20px;
+    font-size: 40px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

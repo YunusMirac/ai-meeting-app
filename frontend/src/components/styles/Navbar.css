@@ -18,10 +18,11 @@ body {
     font-size: 50px;
 }
 
-#homeLink {
+#homeLink,
+#startPageLink {
     margin-left: 20px;
     font-family: 'Dancing Script', cursive;
-    color: #5237ff;
+    color: #4b38c5;
     text-decoration: none;
 }
 
@@ -89,4 +90,22 @@ body {
 .hover-grow:hover::before {
     opacity: 1;
     transform: scale(1);
+}
+
+#startPageLink {
+    font-size: 50px;
+    cursor: default;
+}
+
+#logoutButton {
+    border: none;
+    background-color: transparent;
+    color: red;
+    font-size: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    scale: 1.1;
 }

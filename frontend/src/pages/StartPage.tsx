@@ -130,15 +130,17 @@ wsRef.current.onmessage = (event) => {
             <ul className="contacts-list">
                 {contacts.map((contact, index) => (
                     <li className="contacts-list-item" key={contact.id || `contact-${index}`}>
-                        <Link to={`/chat/${contact.id}`}>
-                            {contact.email} 
-                            {contact.unread_count > 0 && <span>({contact.unread_count})</span>}
+                        <Link className="contact-link" to={`/chat/${contact.id}`}>
+                        <div className="contact-info">
+                           <p className="contact-email">{contact.email}</p>
+                            <p className="contact-unread-count">{contact.unread_count > 0 && <span>{contact.unread_count}</span>}</p>
+                        </div>
                         </Link>
                     </li>
                 ))}
             </ul>
                 ) : (
-                    <p>Keine Kontakte gefunden.</p>
+                    <p className="description">Keine Kontakte gefunden.</p>
                 )}
             </div>
         </>

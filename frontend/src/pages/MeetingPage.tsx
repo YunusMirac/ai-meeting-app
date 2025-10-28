@@ -342,9 +342,9 @@ function MeetingPage() {
       <p>Code: {meetingCode}</p>
       
       <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-        {/* Eigenes Video */}
+        {/* Your Video */}
         <div>
-          <h3>Du</h3>
+          <h3>You</h3>
           <video
             ref={stream}
             autoPlay
@@ -356,7 +356,7 @@ function MeetingPage() {
         {/* Remote Videos */}
         {Object.entries(remoteStreams).map(([userId, stream]) => (
           <div key={userId}>
-            <h3>Benutzer {userId}</h3>
+            <h3>User {userId}</h3>
             <video
               autoPlay
               ref={(video) => {
@@ -380,7 +380,7 @@ function MeetingPage() {
             cursor: "pointer"
           }}
         >
-          Meeting beenden
+          End Meeting
         </button>
       </div>
     </div>

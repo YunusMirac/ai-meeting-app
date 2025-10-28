@@ -121,7 +121,7 @@ wsRef.current.onmessage = (event) => {
                             </tr>
             </tbody></table>
         ) : (
-            <p className="description">Kein Benutzer gefunden.</p>
+            <p className="description">No user found.</p>
                 )}
             </div>
 
@@ -140,7 +140,7 @@ wsRef.current.onmessage = (event) => {
                 ))}
             </ul>
                 ) : (
-                    <p className="description">Keine Kontakte gefunden.</p>
+                    <p className="description">No contacts found.</p>
                 )}
             </div>
         </>

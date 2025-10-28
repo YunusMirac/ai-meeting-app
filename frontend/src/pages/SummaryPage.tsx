@@ -53,20 +53,20 @@ function SummaryPage() {
   // --- JSX ZUR ANZEIGE ---
 
   if (error) {
-    return <div><h1>Fehler</h1><p>{error}</p></div>;
+    return <div><h1>Error</h1><p>{error}</p></div>;
   }
 
   return (
     <div>
       {isLoading ? (
         <div>
-          <h1>Deine Meeting-Zusammenfassung wird generiert...</h1>
-          <p>Dies kann einige Minuten dauern. Bitte schließe dieses Fenster nicht.</p>
+          <h1>Your meeting summary is being generated...</h1>
+          <p>This may take a few minutes. Please do not close this window.</p>
           {/* Hier könntest du einen Lade-Spinner oder eine Animation einfügen */}
         </div>
       ) : (
         <div>
-          <h1>Meeting-Zusammenfassung</h1>
+          <h1>Meeting-Summary</h1>
           {/* Zeigt die Zusammenfassung mit Zeilenumbrüchen an */}
           <pre style={{ whiteSpace: "pre-wrap", fontFamily: "inherit", fontSize: "1rem" }}>
             {summary}

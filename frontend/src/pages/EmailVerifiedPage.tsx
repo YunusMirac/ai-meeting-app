@@ -13,8 +13,8 @@ function EmailVerifiedPage() {
     }, [navigate]);
     return (
         <div>
-            <h1>Email erfolgreich verifiziert!</h1>
-            <p>Vielen Dank! Ihre Email-Adresse wurde erfolgreich verifiziert.</p>
+            <h1>Email successfully verified!</h1>
+            <p>Thank you! Your email address has been successfully verified.</p>
         </div>
     );
 }
